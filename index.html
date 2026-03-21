@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="not-authenticated">
+    <nav class="navbar">
+        <a href="#/" class="navbar-brand">Full-Stack App Rasheed Boriss D. Yap</a>
+        
+        <ul class="navbar-nav">
+            <li class="role-logged-out"><a href="#/login">Login</a></li>
+            <li class="role-logged-out"><a href="#/register">Register</a></li>
+            
+            <li class="role-logged-in"><a href="#/profile">Profile</a></li>
+            <li class="role-logged-in"><a href="#/requests">Requests</a></li>
+
+            <li class="role-admin"><a href="#/employees">Employees</a></li>
+            <li class="role-admin"><a href="#/departments">Departments</a></li>
+            <li class="role-admin"><a href="#/accounts">Accounts</a></li>
+            
+            <li class="role-logged-in"><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div id="home-page" class="page active">
+        <div style="padding: 20px;">
+            <h1>Welcome to the Full-Stack App</h1>
+            <p>Your content goes here...</p>
+        </div>
+    </div>
+
+    <div id="login-page" class="page">
+        <div class="form-container">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p style="margin-top: 15px; text-align: center;">
+                Don't have an account? <a href="#/register">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="register-page" class="page">
+        <div class="form-container">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" id="registerFirstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" id="registerLastName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" id="registerPassword" required minlength="6">
+                    <small>Minimum 6 characters</small>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p style="margin-top: 15px; text-align: center;">
+                Already have an account? <a href="#/login">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="verify-email-page" class="page">
+        <div class="form-container">
+            <h2>Verify Your Email</h2>
+            <p style="margin: 20px 0; color: #666;">
+                We've sent a verification email to <strong id="verifyEmailDisplay"></strong>
+            </p>
+            <div style="background: #f0f0f0; padding: 15px; border-radius: 4px; margin: 20px 0; text-align: center;">
+                <p style="margin: 0; color: #888; font-size: 12px;">Click the button below to simulate email verification</p>
+            </div>
+            <button id="simulateVerifyBtn" class="btn">✅ Simulate Email Verification</button>
+        </div>
+    </div>
+
+    <div id="profile-page" class="page">
+        <div class="content-container">
+            <h1>Profile</h1>
+            <div id="profileContent"></div>
+        </div>
+    </div>
+
+    <div id="requests-page" class="page">
+        <div class="content-container">
+            <h1>My Requests</h1>
+            <div id="requestsContent"></div>
+        </div>
+    </div>
+
+    <div id="employees-page" class="page">
+        <div class="content-container">
+            <h1>Employees</h1>
+            <div id="employeesContent"></div>
+        </div>
+    </div>
+
+    <div id="departments-page" class="page">
+        <div class="content-container">
+            <h1>Departments</h1>
+            <div id="departmentsContent"></div>
+        </div>
+    </div>
+
+    <div id="accounts-page" class="page">
+        <div class="content-container">
+            <h1>Accounts</h1>
+            <div id="accountsContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
