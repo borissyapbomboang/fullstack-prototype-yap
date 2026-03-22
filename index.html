@@ -11,17 +11,21 @@
         <a href="#/" class="navbar-brand">Full-Stack App Rasheed Boriss D. Yap</a>
         
         <ul class="navbar-nav">
-            <li class="role-logged-out"><a href="#/login">Login</a></li>
-            <li class="role-logged-out"><a href="#/register">Register</a></li>
+            <!-- guest links: visible by default, hidden after login -->
+            <li data-role="guest"><a href="#/login">Login</a></li>
+            <li data-role="guest"><a href="#/register">Register</a></li>
             
-            <li class="role-logged-in"><a href="#/profile">Profile</a></li>
-            <li class="role-logged-in"><a href="#/requests">Requests</a></li>
+            <!-- auth links: hidden by default, shown after login -->
+            <li data-role="user" style="display:none"><a href="#/profile">Profile</a></li>
+            <li data-role="user" style="display:none"><a href="#/requests">Requests</a></li>
 
-            <li class="role-admin"><a href="#/employees">Employees</a></li>
-            <li class="role-admin"><a href="#/departments">Departments</a></li>
-            <li class="role-admin"><a href="#/accounts">Accounts</a></li>
+            <!-- admin links: hidden by default, shown only for admins -->
+            <li data-role="admin" style="display:none"><a href="#/admin-dashboard">Dashboard</a></li>
+            <li data-role="admin" style="display:none"><a href="#/employees">Employees</a></li>
+            <li data-role="admin" style="display:none"><a href="#/departments">Departments</a></li>
+            <li data-role="admin" style="display:none"><a href="#/accounts">Accounts</a></li>
             
-            <li class="role-logged-in"><a href="#" id="logoutBtn">Logout</a></li>
+            <li data-role="user" style="display:none"><a href="#" id="logoutBtn">Logout</a></li>
         </ul>
     </nav>
 
@@ -105,6 +109,13 @@
         <div class="content-container">
             <h1>My Requests</h1>
             <div id="requestsContent"></div>
+        </div>
+    </div>
+
+    <div id="admin-dashboard-page" class="page">
+        <div class="content-container">
+            <h1>Admin Dashboard</h1>
+            <div id="adminDashboardContent"></div>
         </div>
     </div>
 
